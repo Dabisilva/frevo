@@ -26,7 +26,7 @@ export default function App() {
       <SafeAreaProvider>
         <ScreenProvider baseFontSize={13}>
           <Routes />
-          <StatusBar style="light" backgroundColor="transparent" />
+          <StatusBar style="dark" backgroundColor="transparent" />
         </ScreenProvider>
       </SafeAreaProvider>
     </>

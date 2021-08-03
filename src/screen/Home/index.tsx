@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-import { View, Text, Image } from "react-native";
+import { View } from "react-native";
 import * as Location from "expo-location";
-import MapView, { Marker, Callout, Region } from "react-native-maps";
-import { useRem } from "responsive-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { Region } from "react-native-maps";
 
-import { SearchInput } from "../../components/Inputs/SearchInput";
+import { MapViewHome } from "../../components/templates/MapViewHome";
 
 import { styles } from "./styles";
-import { RectButton } from "react-native-gesture-handler";
-import { theme } from "../../theme";
+import { HeaderHome } from "../../components/organisms/HeaderHome";
+import { FooterHome } from "../../components/organisms/FooterHome";
 
 export function Home() {
-  const rem = useRem();
   const [location, setLocation] = useState<Region>();
   const [search, setSearch] = useState("");
 
@@ -30,8 +27,8 @@ export function Home() {
     setLocation({
       latitude,
       longitude,
-      latitudeDelta: 100,
-      longitudeDelta: 100,
+      latitudeDelta: 0.02,
+      longitudeDelta: 0.02,
     });
   }
 
@@ -41,86 +38,9 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <MapView
-        region={location}
-        showsUserLocation
-        loadingEnabled={true}
-        //showsMyLocationButton={false}
-        followsUserLocation
-        style={[styles.map, { padding: rem(1, true) }]}
-      >
-        <Marker
-          coordinate={{
-            latitude: -15.632405,
-            longitude: -47.650217,
-          }}
-          calloutAnchor={{
-            x: 4,
-            y: 4,
-          }}
-        >
-          <Callout tooltip>
-            <View
-              style={[
-                styles.calloutContainer,
-                {
-                  height: rem(10, true),
-                  width: rem(10, true),
-                  padding: rem(1, true),
-                  borderRadius: rem(1, true),
-                },
-              ]}
-            >
-              <Text>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Text>
-            </View>
-          </Callout>
-        </Marker>
-      </MapView>
-      <View style={[styles.header, { top: rem(2, true) }]}>
-        <SearchInput placeholder="Pesquisar festas" />
-      </View>
-      <View style={[styles.footer, { height: rem(3, true) }]}>
-        <RectButton style={[styles.profile, { marginBottom: rem(1, true) }]}>
-          <Image
-            source={{
-              uri: "https://avatars.githubusercontent.com/u/57877449?v=4",
-            }}
-            style={{
-              width: rem(3, true),
-              height: rem(3, true),
-              borderRadius: rem(3, true),
-            }}
-          />
-          <Text>Perfil</Text>
-        </RectButton>
-
-        <View
-          style={[
-            styles.createEvent,
-            { margin: rem(1, true), marginBottom: rem(3, true) },
-          ]}
-        >
-          <RectButton
-            style={[
-              styles.buttonAdd,
-              {
-                width: rem(3, true),
-                height: rem(3, true),
-                borderRadius: rem(3, true),
-              },
-            ]}
-          >
-            <FontAwesome
-              name="plus"
-              size={rem(2, true)}
-              color={theme.colors.gray20}
-            />
-          </RectButton>
-          <Text>Criar Evento</Text>
-        </View>
-      </View>
+      <MapViewHome location={location} />
+      <HeaderHome />
+      <FooterHome />
     </View>
   );
 }

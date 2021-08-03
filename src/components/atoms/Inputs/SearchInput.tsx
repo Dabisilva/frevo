@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput, TextInputProps, StyleSheet } from "react-native";
 import { useRem } from "responsive-native";
-import { theme } from "../../theme";
+import { theme } from "../../../theme";
 
 export function SearchInput({ ...rest }: TextInputProps) {
   const rem = useRem();

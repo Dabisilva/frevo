@@ -12,23 +12,6 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     alignItems: "center",
   },
-  createProfile: {
-    backgroundColor: theme.colors.gray10,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  createProfileText: {
-    color: theme.colors.gray20,
-    fontFamily: theme.fonts.title500,
-  },
-  logIn: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: theme.colors.gray10,
-  },
-  logInText: {
-    color: theme.colors.gray20,
-  },
   socialLogIn: {
     flexDirection: "row",
     alignItems: "center",
