@@ -27,8 +27,8 @@ export function Home() {
     setLocation({
       latitude,
       longitude,
-      latitudeDelta: 0.02,
-      longitudeDelta: 0.02,
+      latitudeDelta: 0.01,
+      longitudeDelta: 0.01,
     });
   }
 

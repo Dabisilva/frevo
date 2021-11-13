@@ -9,6 +9,11 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
     width: "100%",
   },
+  search: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   createEvent: {
     alignItems: "center",
   },

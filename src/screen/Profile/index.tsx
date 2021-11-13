@@ -8,7 +8,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { useRem } from "responsive-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 import { styles } from "./styles";
 import { theme } from "../../theme";
@@ -31,6 +31,17 @@ export function Profile() {
           <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
             <Ionicons
               name="arrow-back-sharp"
+              size={rem(2, true)}
+              color={theme.colors.gray20}
+            />
+          </TouchableWithoutFeedback>
+
+          <TouchableWithoutFeedback
+            onPress={() => navigation.navigate("Configuration")}
+          >
+            <FontAwesome
+              style={{ marginRight: rem(2, true) }}
+              name="gear"
               size={rem(2, true)}
               color={theme.colors.gray20}
             />

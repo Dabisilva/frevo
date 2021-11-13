@@ -13,6 +13,10 @@ import { TextOneRem } from "../../atoms/TextOneRem";
 export function EventButton() {
   const navigation = useNavigation();
   const rem = useRem();
+
+  function handlePress() {
+    navigation.navigate("CreateEvent");
+  }
   return (
     <View
       style={[
@@ -21,6 +25,7 @@ export function EventButton() {
       ]}
     >
       <RectButton
+        onPress={handlePress}
         style={[
           styles.buttonAdd,
           {
