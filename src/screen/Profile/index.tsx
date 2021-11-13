@@ -67,7 +67,7 @@ export function Profile() {
             },
           ]}
         >
-          Davi 19 anos
+          Davi 20 anos
         </Text>
 
         <View

@@ -8,11 +8,16 @@ import { TextOneRem } from "../../TextOneRem";
 
 import { styles } from "./styles";
 
-export function CreateProfile() {
+export function CreateProfileButton() {
   const navigation = useNavigation();
   const rem = useRem();
+
+  function handlePress() {
+    navigation.navigate("CreateProfile");
+  }
   return (
     <RectButton
+      onPress={handlePress}
       style={[
         styles.createProfile,
         {

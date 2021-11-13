@@ -5,7 +5,7 @@ import { useRem } from "responsive-native";
 import { styles } from "./styles";
 import { InputLogIn } from "../../components/atoms/Inputs/inputLogIn";
 import { SignInButton } from "../../components/atoms/Buttons/SignInButton";
-import { CreateProfile } from "../../components/atoms/Buttons/CreateProfile";
+import { CreateProfileButton } from "../../components/atoms/Buttons/CreateProfileButton";
 import { SocialView } from "../../components/molecules/SocialView";
 
 export function SignIn() {
@@ -38,7 +38,7 @@ export function SignIn() {
 
         <SignInButton />
 
-        <CreateProfile />
+        <CreateProfileButton />
 
         <SocialView />
       </View>
